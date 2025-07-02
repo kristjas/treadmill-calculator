@@ -131,8 +131,8 @@
             <button :class="{ active: speed === 7 }" @click="selectSpeed(7)">7 km/h</button>
           </div>
 
-          <div class="result">
-            <p>You need to do</p>
+          <div class="result1">
+            <p><strong>You need to do:</strong></p>
             <p><strong>{{ selectedMinutes.toFixed(2) }}</strong> minutes of treadmill walking on the selected setting</p>
             <p><strong>{{ sessionsPerWeek }}</strong> times a week</p>
           </div>
@@ -269,6 +269,8 @@ function reset() {
   BMR.value            = 0;
   currentkcal.value    = 0;
   kcalPerSession.value = 0;
+
+ 
 }
 
 async function calculateBMR() {
@@ -311,6 +313,8 @@ if (goalPerWeek.value === 0.25) {
   }
 
   calculated.value = true;
+  await nextTick(); 
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 
 }
 
@@ -337,17 +341,31 @@ const selectedMinutes = computed(() => {
 
 
 <style scoped>
+* {
+  box-sizing: border-box;
+}
 /* Base container */
 .container {
+  transform: scale(0.8);
+  transform-origin: top center;
   max-width: 480px;
-  margin: auto;
-  padding: 20px;
+  width: 100%; 
+  margin: 0 auto;
+  padding: 12px 12px; 
   background: #ffffff;
-  border: 1px solid #ccc; 
-  border-radius: 0;        
-  box-shadow: none;        
+  border: 1px solid #ccc;
+  border-radius: 0;
+  box-shadow: none;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
+}
+
+@media (max-width: 600px) {
+  .container {
+    transform: none;         /* remove scale shrink on phones */
+    padding: 8px 8px;
+    border: none;
+    max-width: 100%;
+  }
 }
 
 /* Title */
@@ -360,7 +378,7 @@ const selectedMinutes = computed(() => {
 
 /* Input groups */
 .input-group {
-  margin-right: 7%;
+  margin-right: 3%;
   margin-left: 3%;
   margin-bottom: 5%;
 }
@@ -407,6 +425,10 @@ const selectedMinutes = computed(() => {
   gap: 10px;
   font-size: 14px;
   color: #333;
+}
+
+.button{
+  width: 65%;
 }
 
 .radio-option input[type="radio"] {
@@ -562,6 +584,16 @@ h3{
   color: #000;
   
 
+}
+
+.result1 {
+  background-color: #e0e0e0;
+  color: #000;
+  border: 2px solid #000; 
+  border-radius: 8px;         
+  padding: 16px;              
+  margin-top: 7%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .logo {

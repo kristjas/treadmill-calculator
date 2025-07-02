@@ -21,6 +21,7 @@ html, body {
   height: 100%;
   background-color: #ffffff;
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,16 +32,17 @@ html, body {
   min-height: 100vh;
 }
 
-/* Dark Navigation Bar */
+/* Compact Navigation Bar */
 nav {
   background-color: #484848;
-  padding: 20px 30px;
+  padding: 10px 20px; /* smaller padding */
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 20px;
+  gap: 12px; /* tighter spacing */
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
   border-bottom: 1px solid #333;
+  font-size: 14px; /* smaller nav text */
 }
 
 /* Nav Links */
@@ -48,7 +50,7 @@ nav a {
   font-weight: 600;
   color: #acacac;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px; /* reduced font size */
   transition: color 0.2s;
 }
 
@@ -60,12 +62,13 @@ nav a.router-link-exact-active {
   color: #000000;
 }
 
+/* Smaller Logo */
 .nav-logo {
-  width: 40px;
-  height: 40px;
-  margin-right: 8px;
+  width: 28px;  /* reduced from 40px */
+  height: 28px;
+  margin-right: 6px;
   vertical-align: middle;
-  object-fit: contain; 
+  object-fit: contain;
 }
 </style>
 

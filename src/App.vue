@@ -1,10 +1,18 @@
 <template>
   <nav>
-    <router-link to="/">Home - Calculator</router-link> |
+    <router-link to="/">
+      <img :src="logo" alt="Logo" class="nav-logo" />
+      Home - Calculator
+    </router-link>
+    |
     <router-link to="/about">About</router-link>
   </nav>
   <router-view/>
 </template>
+
+<script setup>
+import logo from '@/assets/logo.png';
+</script>
 
 <style>
 html, body {
@@ -50,6 +58,14 @@ nav a:hover {
 
 nav a.router-link-exact-active {
   color: #000000;
+}
+
+.nav-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  vertical-align: middle;
+  object-fit: contain; 
 }
 </style>
 

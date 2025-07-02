@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <h2 class="title">Treadmill cardio calculator</h2>
+    
+    <h2 class="title">Treadmill cardio calculator <img :src="logo" alt="Logo" class="logo" /></h2>
     <!-- CALCULATION -->
     
     <div v-if="!calculated">
@@ -85,11 +86,13 @@
 
 
       <div class="input-group">
+        
         <label>Training Sessions per Week: {{ sessionsPerWeek }}</label>
         <input v-model.number="sessionsPerWeek" type="range" min="1" max="7" />
+        
       </div>
 
-      <button class="button" @click="calculateBMR">Calculate BMR</button>
+      <button class="button" @click="calculateBMR">Calculate</button>
       <p v-if="submitted && !formComplete" class="error-text">Please fill all the fields.</p>
 
     </div>
@@ -189,6 +192,7 @@
 
 <script setup>
 import { ref, computed, nextTick } from 'vue';
+import logo from '@/assets/logo.png';
 
 const calculated       = ref(false);
 const submitted        = ref(false);
@@ -336,13 +340,14 @@ const selectedMinutes = computed(() => {
 /* Base container */
 .container {
   max-width: 480px;
-  margin: 40px auto;
-  padding: 30px;
+  margin: auto;
+  padding: 20px;
   background: #ffffff;
   border: 1px solid #ccc; 
   border-radius: 0;        
   box-shadow: none;        
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
 }
 
 /* Title */
@@ -355,7 +360,9 @@ const selectedMinutes = computed(() => {
 
 /* Input groups */
 .input-group {
-  margin-bottom: 20px;
+  margin-right: 7%;
+  margin-left: 3%;
+  margin-bottom: 5%;
 }
 .input-group label {
   display: block;
@@ -372,6 +379,7 @@ const selectedMinutes = computed(() => {
   font-size: 15px;
   background-color: #fdfdfd;
   transition: border-color 0.2s;
+  
 }
 .input-group input:focus,
 .input-group select:focus {
@@ -408,6 +416,7 @@ const selectedMinutes = computed(() => {
 .radio-option span {
   line-height: 1.4;
 }
+
 
 
 .genderAndActivity-buttons button,
@@ -554,6 +563,16 @@ h3{
   
 
 }
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 8px;
+  vertical-align: middle;
+  object-fit: contain; 
+}
+
+
 
 
 </style>

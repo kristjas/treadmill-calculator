@@ -91,9 +91,9 @@
         <input v-model.number="sessionsPerWeek" type="range" min="1" max="7" />
         
       </div>
-
-      <button class="button" @click="calculateBMR">Calculate</button>
       <p v-if="submitted && !formComplete" class="error-text">Please fill all the fields.</p>
+      <button class="button" @click="calculateBMR">Calculate</button>
+      
 
     </div>
 
@@ -374,17 +374,19 @@ const selectedMinutes = computed(() => {
   font-size: 24px;
   margin-bottom: 25px;
   color: #333;
+  
 }
 
 /* Input groups */
 .input-group {
   margin-right: 3%;
   margin-left: 3%;
-  margin-bottom: 5%;
+  margin-bottom: 8%;
+  border-bottom: 1px solid #484848;
 }
 .input-group label {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 2%;
   font-weight: 600;
   color: #444;
 }
@@ -397,6 +399,7 @@ const selectedMinutes = computed(() => {
   font-size: 15px;
   background-color: #fdfdfd;
   transition: border-color 0.2s;
+  margin-bottom: 8%;
   
 }
 .input-group input:focus,
@@ -410,7 +413,7 @@ const selectedMinutes = computed(() => {
 .button-group {
   display: flex;
   gap: 10px;
-  margin-top: 6px;
+  margin-bottom: 8%;
 }
 .radio-group {
   display: flex;

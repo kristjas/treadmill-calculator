@@ -2,6 +2,7 @@
   <div class="container">
     
     <h2 class="title">Treadmill cardio calculator <img :src="logo" alt="Logo" class="logo" /></h2>
+    
     <!-- CALCULATION -->
     
     <div v-if="!calculated">
@@ -240,6 +241,8 @@ function updateKcal() {
     kcal.value = null;
   }
 }
+
+
 const MINUTES = {
   inc0s3: ref(0), inc0s5: ref(0), inc0s7: ref(0),
   inc10s3: ref(0), inc10s5: ref(0), inc10s7: ref(0),
@@ -318,6 +321,8 @@ if (goalPerWeek.value === 0.25) {
 
 }
 
+
+
 //TEEME SWITCHIGA HILJEM
 const selectedMinutes = computed(() => {
   if (incline.value === 0 && speed.value === 3)  return MINUTES.inc0s3.value;
@@ -340,11 +345,12 @@ const selectedMinutes = computed(() => {
 
 
 
+
 <style scoped>
 * {
   box-sizing: border-box;
 }
-/* Base container */
+
 .container {
   transform: scale(0.8);
   transform-origin: top center;
@@ -361,14 +367,14 @@ const selectedMinutes = computed(() => {
 
 @media (max-width: 600px) {
   .container {
-    transform: none;         /* remove scale shrink on phones */
+    transform: none;         
     padding: 8px 8px;
     border: none;
     max-width: 100%;
   }
 }
 
-/* Title */
+
 .title {
   text-align: center;
   font-size: 24px;
@@ -377,7 +383,7 @@ const selectedMinutes = computed(() => {
   
 }
 
-/* Input groups */
+
 .input-group {
   margin-right: 3%;
   margin-left: 3%;
@@ -408,7 +414,7 @@ const selectedMinutes = computed(() => {
   outline: none;
 }
 
-/* Button groups */
+
 .genderAndActivity-buttons,
 .button-group {
   display: flex;
@@ -471,7 +477,7 @@ const selectedMinutes = computed(() => {
   color: white;
 }
 
-/* Results */
+
 .controls {
   margin-top: 20px;
 }
@@ -514,13 +520,13 @@ const selectedMinutes = computed(() => {
   text-align: center;
 }
 
-/* Navigation */
+
 .button.mt-4 {
   margin-top: 1.5rem;
   background-color: #555;
 }
 
-/* Error */
+
 .error-text {
   color: #d93025;
   margin-top: 12px;

@@ -19,27 +19,6 @@
   </div>
 </template>
 
-<style scoped>
-.about {
-  max-width: 700px;
-  margin: 60px auto;
-  padding: 30px;
-  background-color: #ffffff;
-  color: #000000;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-}
-
-.about h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.about p {
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 16px;
-}
-</style>
+<script setup>
+import './AboutView.css';
+</script>

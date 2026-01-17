@@ -324,18 +324,20 @@ if (goalPerWeek.value === 0.25) {
 
 
 
-//TEEME SWITCHIGA HILJEM
 const selectedMinutes = computed(() => {
-  if (incline.value === 0 && speed.value === 3)  return MINUTES.inc0s3.value;
-  if (incline.value === 0 && speed.value === 5)  return MINUTES.inc0s5.value;
-  if (incline.value === 0 && speed.value === 7)  return MINUTES.inc0s7.value;
-  if (incline.value === 10 && speed.value === 3) return MINUTES.inc10s3.value;
-  if (incline.value === 10 && speed.value === 5) return MINUTES.inc10s5.value;
-  if (incline.value === 10 && speed.value === 7) return MINUTES.inc10s7.value;
-  if (incline.value === 15 && speed.value === 3) return MINUTES.inc15s3.value;
-  if (incline.value === 15 && speed.value === 5) return MINUTES.inc15s5.value;
-  if (incline.value === 15 && speed.value === 7) return MINUTES.inc15s7.value;
-  return 0;
+  const key = `inc${incline.value}s${speed.value}`;
+  switch (key) {
+    case 'inc0s3':  return MINUTES.inc0s3.value;
+    case 'inc0s5':  return MINUTES.inc0s5.value;
+    case 'inc0s7':  return MINUTES.inc0s7.value;
+    case 'inc10s3': return MINUTES.inc10s3.value;
+    case 'inc10s5': return MINUTES.inc10s5.value;
+    case 'inc10s7': return MINUTES.inc10s7.value;
+    case 'inc15s3': return MINUTES.inc15s3.value;
+    case 'inc15s5': return MINUTES.inc15s5.value;
+    case 'inc15s7': return MINUTES.inc15s7.value;
+    default: return 0;
+  }
 });
 </script>
 
